@@ -5,8 +5,7 @@
 body {
   font-family: "Press Start 2P", Helvetica, Arial, serif;
   background-image: url("../images/background.png");
-  background-color: #222222;
-  overflow-y: hidden; }
+  background-color: #222222; }
 
 .container {
   margin-top: 5%; }
