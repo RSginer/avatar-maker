@@ -1,0 +1,42 @@
+@-webkit-keyframes show-container-avatar {
+    0%   { right: -2000px;
+           transform: rotate(190deg);
+    }
+    100% { right: 0px; }
+}
+
+.container-de-avatar{
+    perspective: 1000px;
+    position:absolute;
+    max-width: 700px;
+    animation: show-container-avatar 2s;
+    box-shadow: 2px 4px 25px black;
+    padding:1% 20%;
+    background: white;
+    perspective: 3d;
+    margin-left: 78px;
+    height: 500px;
+}
+
+.container-de-avatar__caja{
+    box-shadow: 0px 0px 2px whitesmoke;
+    border: 5px solid skyblue;
+    border-bottom-width: 0px !important;
+    background: $avatar-box-bg;
+    width: 350px;
+    height: 350px; 
+    border-radius: 8px;
+}
+.avatar{
+    position: absolute;
+    z-index: 1;
+    bottom:0px;
+    margin-left: -20px;
+}
+.avatar__cabeza{
+    z-index: 0;
+}
+
+#nombre{
+    text-transform: capitalize;
+}

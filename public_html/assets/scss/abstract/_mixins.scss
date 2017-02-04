@@ -1,0 +1,4 @@
+@mixin darken-bg-and-white-color-30($bg-color){
+    background-color: darken($bg-color, 30%);
+    color: white; 
+}

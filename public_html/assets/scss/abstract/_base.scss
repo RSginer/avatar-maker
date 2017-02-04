@@ -1,0 +1,33 @@
+body{
+    font-family:  $font-family;
+    background-image: $background-image;
+    background-color: $background-color;
+    overflow-y: hidden;
+}
+.container{
+    margin-top: 5%;
+}
+.hidden{
+    display:none;
+}
+
+.link{
+    color: $link-color;
+    &:hover{
+        color: $link-hover-color;
+        text-decoration: none !important;
+    }
+}
+
+.fa.icono{
+    font-size: $iconos-size;
+}
+
+/* CUSTOM SCROLL BAR */
+::-webkit-scrollbar{width: 10px;}
+::-webkit-scrollbar-thumb{background-color:$scrollbar-bg-color;}
+::-webkit-scrollbar-button{background-color: $scrollbar-button-bg-color;}
+::-webkit-scrollbar-button:hover{background-color: darken($scrollbar-button-bg-color, 100%);}
+::-webkit-scrollbar-thumb:hover{background-color:lighten($scrollbar-bg-color, 10%);}
+::-webkit-scrollbar-track{background-color:$scrollbar-base-bg-color;}
+/* FIN CUSTOM SCROLL BAR*/

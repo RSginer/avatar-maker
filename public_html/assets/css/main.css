@@ -1,0 +1,219 @@
+@font-face {
+  font-family: "Press Start 2P";
+  src: url("../fonts/prstartk.ttf") format("truetype"); }
+
+body {
+  font-family: "Press Start 2P", Helvetica, Arial, serif;
+  background-image: url("../images/background.png");
+  background-color: #222222;
+  overflow-y: hidden; }
+
+.container {
+  margin-top: 5%; }
+
+.hidden {
+  display: none; }
+
+.link {
+  color: aquamarine; }
+  .link:hover {
+    color: #fd0088;
+    text-decoration: none !important; }
+
+.fa.icono {
+  font-size: 3em; }
+
+/* CUSTOM SCROLL BAR */
+::-webkit-scrollbar {
+  width: 10px; }
+
+::-webkit-scrollbar-thumb {
+  background-color: #00bfff; }
+
+::-webkit-scrollbar-button {
+  background-color: #808080; }
+
+::-webkit-scrollbar-button:hover {
+  background-color: black; }
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #33ccff; }
+
+::-webkit-scrollbar-track {
+  background-color: #ededed; }
+
+/* FIN CUSTOM SCROLL BAR*/
+@-webkit-keyframes show-container-piezas {
+  0% {
+    left: -2000px;
+    transform: rotate(190deg); }
+  50% { }
+  100% {
+    left: 0px; } }
+
+.container-de-piezas {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  box-shadow: -5px 10px 50px black;
+  margin-right: 25px;
+  animation: show-container-piezas 2s;
+  margin-left: -25px;
+  height: 500px; }
+
+.container-de-piezas__caja {
+  height: 498px;
+  overflow-y: scroll;
+  overflow-x: hidden; }
+
+.pieza {
+  margin-left: -25px; }
+
+.container-de-generos {
+  margin-top: 15px; }
+
+.genero {
+  font-size: 55px;
+  color: white; }
+
+.genero--femenino {
+  background-color: #ff97cf; }
+  .genero--femenino:hover {
+    background-color: #fd0088;
+    color: white; }
+  .genero--femenino:active {
+    background-color: #fd0088;
+    color: white; }
+  .genero--femenino:focus {
+    background-color: #fd0088;
+    color: white; }
+
+.genero--masculino {
+  background-color: #bdd6fb; }
+  .genero--masculino:hover {
+    background-color: #2d7cf2;
+    color: white; }
+  .genero--masculino:active {
+    background-color: #2d7cf2;
+    color: white; }
+  .genero--masculino:focus {
+    background-color: #2d7cf2;
+    color: white; }
+
+.genero--femenino--active {
+  background-color: #fd0088;
+  color: white;
+  cursor: default; }
+
+@-webkit-keyframes show-container-avatar {
+  0% {
+    right: -2000px;
+    transform: rotate(190deg); }
+  100% {
+    right: 0px; } }
+
+.container-de-avatar {
+  perspective: 1000px;
+  position: absolute;
+  max-width: 700px;
+  animation: show-container-avatar 2s;
+  box-shadow: 2px 4px 25px black;
+  padding: 1% 20%;
+  background: white;
+  perspective: 3d;
+  margin-left: 78px;
+  height: 500px; }
+
+.container-de-avatar__caja {
+  box-shadow: 0px 0px 2px whitesmoke;
+  border: 5px solid skyblue;
+  border-bottom-width: 0px !important;
+  background: skyblue;
+  width: 350px;
+  height: 350px;
+  border-radius: 8px; }
+
+.avatar {
+  position: absolute;
+  z-index: 1;
+  bottom: 0px;
+  margin-left: -20px; }
+
+.avatar__cabeza {
+  z-index: 0; }
+
+#nombre {
+  text-transform: capitalize; }
+
+.creditos {
+  position: fixed;
+  bottom: 0px;
+  padding: 10px;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  color: white;
+  text-align: center; }
+
+@-webkit-keyframes hideStartWindow {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+.hideStartWindow {
+  animation: hideStartWindow 2.4s; }
+
+.start-title {
+  font-size: 40px;
+  color: white;
+  position: fixed;
+  top: 60%;
+  left: 8%;
+  text-align: center; }
+
+.start-credits {
+  font-size: 30px;
+  color: grey;
+  text-align: center;
+  text-transform: uppercase;
+  margin-left: -50px;
+  font-weight: bold; }
+
+#start-button {
+  font-size: 50px;
+  padding: 20px 100px;
+  top: 35%;
+  box-shadow: -5px 10px 50px black;
+  font-weight: bold;
+  text-transform: uppercase;
+  left: 25%;
+  position: fixed; }
+
+@media (min-width: 1920px) {
+  .start-title {
+    left: 20%; }
+  .start-credits {
+    margin-left: -100px;
+    margin-right: 0px; }
+  #start-button {
+    top: 30%;
+    left: 32%; } }
+
+.piel {
+  padding: 30px;
+  margin: 5px;
+  border: 4px solid transparent; }
+
+.piel--active {
+  border: 4px solid #00bfff; }
+
+.nav-tabs {
+  margin-top: -42px; }
+
+.nav-tabs li {
+  background: grey; }
+  .nav-tabs li:hover > a {
+    color: #343434 !important; }
+
+.nav-tabs li a {
+  color: white; }

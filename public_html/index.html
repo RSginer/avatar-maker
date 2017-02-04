@@ -4,257 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="favicon.png" type="image/x-icon" />
         <title>Avatar Maker</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-
-        <style>
-            body{
-                font-family:  'Press Start 2P', Helvetica, Arial, serif;
-                background: url('assets/images/background.png') #222222;
-                overflow-y: hidden;
-            }
-            .container{
-                margin-top: 5%;
-            }
-            @-webkit-keyframes show-container-piezas {
-                0%   { left: -2000px;transform: rotate(190deg); }
-                50%{ }
-                100% { left: 0px; }
-            }
-            .container-de-piezas{
-                perspective: 1000px;
-                transform-style: preserve-3d;
-                box-shadow: -5px 10px 50px black;
-                margin-right: 25px;
-                animation: show-container-piezas 2s;
-                margin-left: -25px;
-                height: 500px;
-            }
-
-            .container-de-piezas__caja{
-                height: 498px;
-                overflow-y: scroll;
-                overflow-x: hidden;
-
-
-            }
-            /* custom scroll bar*/
-            ::-webkit-scrollbar{width: 10px;}
-            ::-webkit-scrollbar-thumb{background-color:deepskyblue; border-radius: 0;}
-            ::-webkit-scrollbar-button{background-color: rgba(0,0,0,0.5);}
-            ::-webkit-scrollbar-button:hover{background-color: black;}
-            ::-webkit-scrollbar-thumb:hover{background-color:skyblue;}
-            ::-webkit-scrollbar-track{background-color:rgb(237, 237, 237);}
-            /* fin scroll bar */
-            @-webkit-keyframes show-container-avatar {
-                0%   { right: -2000px;transform: rotate(190deg); }
-                100% { right: 0px; }
-            }
-
-
-            .container-de-avatar{
-                perspective: 1000px;
-                position:absolute;
-                max-width: 700px;
-                animation: show-container-avatar 2s;
-                box-shadow: 2px 4px 25px black;
-                padding:1% 20%;
-                background: white;
-                perspective: 3d;
-                margin-left: 78px;
-                height: 500px;
-            }
-
-            .hidden{
-                display:none;
-            }
-
-            .container-de-avatar__caja{
-                box-shadow: 0px 0px 2px whitesmoke;
-                border: 5px solid skyblue;
-                border-bottom-width: 0px !important;
-                background: skyblue;
-                width: 350px;
-                height: 350px; 
-                border-radius: 8px;
-            }
-
-            .avatar{
-                position: absolute;
-                z-index: 1;
-                bottom:0px;
-                margin-left: -20px;
-            }
-
-            .avatar__cabeza{
-                z-index: 0;
-            }
-
-            .container-de-generos{
-                margin-top: 15px;
-            }
-            .genero{
-                font-size: 55px;
-                color: white;
-            }
-            .genero--femenino{
-                background-color: #ff97cf;
-            }
-
-            .genero--femenino:hover{
-                background-color: deeppink;
-                color: white;
-            }
-            .genero--femenino:active{
-                background-color: deeppink;
-                color: white;
-            }
-            .genero--femenino:focus{
-                background-color: deeppink;
-                color: white;
-            }
-            .genero--masculino{
-                background-color: #bdd6fb;
-            }
-
-            .genero--masculino:hover{
-                background-color: #0268ff;
-                color:white;
-            }
-            .genero--masculino:active{
-                background-color: #0268ff;
-                color:white;
-            }
-            .genero--masculino:focus{
-                background-color: #0268ff;
-                color:white;
-            }
-            .creditos{
-                position: fixed;
-                bottom: 0px;
-                padding: 10px;
-                font-size: 12px;
-                background: rgba(0,0,0,0.5);
-                width: 100%;
-                color:white;
-                text-align: center;
-
-            }
-            .link{
-                color:aquamarine;
-            }
-
-            .link:hover{
-                text-decoration: none;
-            }
-
-            .start-title{
-                font-size: 40px;
-                color:white;
-                position: fixed;
-                top:60%;
-                left: 8%;
-                text-align: center;
-
-            }
-
-            .start-credits{
-                font-size: 30px;
-                color:grey;
-                text-align: center;
-                text-transform: uppercase;
-                margin-left:-50px;
-                font-weight: bold;
-            }
-
-
-            #start-button{
-                font-size: 50px;
-                padding:20px 100px;
-                top:35%;
-                box-shadow: -5px 10px 50px black;
-                font-weight: bold;
-                text-ransform: uppercase;
-                left:25%;
-                position:fixed;
-            }
-
-            .fa.icono{
-                font-size: 3em;
-            }
-
-            .link:hover{
-                color:deeppink;
-            }
-            .nav-tabs{
-                margin-top: -42px;
-            }
-
-            .nav-tabs li{
-                background: grey;
-            }
-
-            .nav-tabs li a{
-                color: white;
-            }
-
-            .nav-tabs li:hover > a{
-                color: #222 !important;
-            }
-
-            .piel{
-                padding:30px;
-                margin:5px;
-                border: 4px solid transparent;
-            }
-            .piel--active{
-                border: 4px solid deepskyblue;
-            }
-            #nombre{
-                text-transform: capitalize;
-            }
-            
-            .pieza{
-                margin-left: -25px;
-            }
-
-            .genero--femenino--active{
-                background-color: deeppink;
-                cursor: default;
-            }
-
-            @-webkit-keyframes hideStartWindow{
-                0%{opacity: 1;}
-                100%{opacity:0;}
-            }
-
-            .hideStartWindow{
-
-                animation: hideStartWindow 2.4s;
-            }
-
-
-
-            @media (min-width: 1920px){
-                .start-title{
-                    left: 20%;                    
-                }
-
-                .start-credits{
-                    margin-left: -100px;
-                    margin-right: 0px;
-                }
-
-                #start-button{
-                    top:30%;
-                    left:32%;
-                }
-
-            }
-        </style>
-
+        <link href="assets/vendor/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/vendor/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/css/main.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <div class="container">
@@ -301,10 +55,10 @@
                             <span id="nombre">Avatar</span>
                         </div>
                         <div class="col-xs-10 container-de-avatar__caja">
-                            <img class="avatar" src="assets/images/chica/pelos/pelo-chica-2.png">
-                            <img  class="avatar avatar__cabeza" src="assets/images/chica/cabezas/cabeza-chica-3.png">
-                            <img  class="avatar" src="assets/images/chica/ojos/ojos-chica-4.png">
-                            <img  class="avatar" src="assets/images/chica/bocas/boca-chica-3.png">
+                            <img class="avatar" src="assets/images/chico/pelos/pelo-chico-2.png">
+                            <img  class="avatar avatar__cabeza" src="assets/images/chico/cabezas/cabeza-chico-3.png">
+                            <img  class="avatar" src="assets/images/chico/ojos/ojos-chico-4.png">
+                            <img  class="avatar" src="assets/images/chico/bocas/boca-chico-3.png">
                         </div>
                         <div class="col-xs-1">
                             <br>
@@ -332,10 +86,8 @@
         <div class="creditos">
             <span><i class="fa icono fa-github"></i> Puedes descargar el código en <a class="link" href="http://www.github.com/RSginer">http://www.github.com/RSginer</a> | Dibujos by <a class="link" href="http://opengameart.org/content/avatar-generator-with-15-trillion-combinations">Noblemaster</a></span>
         </div>
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="assets/vendor/jquery-3.1.1.min.js" type="text/javascript"></script>
+        <script src="assets/vendor/bootstrap-3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
         <script>
             var nombre;
             $(document).ready(function () {

@@ -1,0 +1,14 @@
+.nav-tabs{
+    margin-top: -42px;
+}
+.nav-tabs li{
+    background: $tab-bg-color;
+
+    &:hover > a{
+        color: darken($tab-bg-color, 30%) !important;
+    }
+}
+.nav-tabs li a{
+    color: $tab-color;
+}
+

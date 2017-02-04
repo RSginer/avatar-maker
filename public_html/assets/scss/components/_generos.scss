@@ -1,0 +1,36 @@
+.container-de-generos{
+    margin-top: 15px;
+}
+.genero{
+    font-size: 55px;
+    color: white;
+}
+.genero--femenino{
+    background-color: $genero-femenino-bg-color;
+    &:hover{
+        @include darken-bg-and-white-color-30($genero-femenino-bg-color);
+    }
+    &:active{
+        @include darken-bg-and-white-color-30($genero-femenino-bg-color);
+    }
+    &:focus{
+        @include darken-bg-and-white-color-30($genero-femenino-bg-color);
+    }
+}
+.genero--masculino{
+    background-color: $genero-masculino-bg-color;
+    &:hover{
+        @include darken-bg-and-white-color-30($genero-masculino-bg-color);
+    }
+    &:active{
+        @include darken-bg-and-white-color-30($genero-masculino-bg-color);
+    }
+    &:focus{
+        @include darken-bg-and-white-color-30($genero-masculino-bg-color);
+    }
+}
+
+.genero--femenino--active{
+    @include darken-bg-and-white-color-30($genero-femenino-bg-color);
+    cursor: default;
+}
