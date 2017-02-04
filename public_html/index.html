@@ -4,20 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <title>Avatar Maker</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
-
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+
         <style>
             body{
                 font-family:  'Press Start 2P', Helvetica, Arial, serif;
@@ -52,7 +43,7 @@
             ::-webkit-scrollbar{width: 10px;}
             ::-webkit-scrollbar-thumb{background-color:deepskyblue; border-radius: 0;}
             ::-webkit-scrollbar-button{background-color: rgba(0,0,0,0.5);}
-             ::-webkit-scrollbar-button:hover{background-color: black;}
+            ::-webkit-scrollbar-button:hover{background-color: black;}
             ::-webkit-scrollbar-thumb:hover{background-color:skyblue;}
             ::-webkit-scrollbar-track{background-color:rgb(237, 237, 237);}
             /* fin scroll bar */
@@ -237,16 +228,33 @@
                     <button  id="start-button"  class="btn btn-lg btn-info">Comenzar</button>
                 </div>
                 <div style="" class="col-xs-4 panel container-de-piezas hidden">
-                    <ul class="nav nav-tabs">
-                        <li role="presentation" class="active"><a href="#">Ojos</a></li>
-                        <li role="presentation"><a href="#">Bocas</a></li>
-                        <li role="presentation"><a href="#">Pelos</a></li>
+                    <ul class="nav nav-tabs" id="tabs">
+                        <li role="presentation" class="active"><a href="#ojos">Ojos</a></li>
+                        <li role="presentation"><a href="#bocas">Bocas</a></li>
+                        <li role="presentation"><a href="#pelos">Pelos</a></li>
                     </ul>
                     <div class="col-xs-12 container-de-piezas__caja">
-                        <img src="assets/images/chica/ojos/ojos-chica-1.png">
-                        <img  src="assets/images/chica/ojos/ojos-chica-2.png">
-                        <img src="assets/images/chica/ojos/ojos-chica-3.png">
-                        <img  src="assets/images/chica/ojos/ojos-chica-4.png">
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="ojos">
+                                <img src="assets/images/chica/ojos/ojos-chica-1.png">
+                                <img  src="assets/images/chica/ojos/ojos-chica-2.png">
+                                <img src="assets/images/chica/ojos/ojos-chica-3.png">
+                                <img  src="assets/images/chica/ojos/ojos-chica-4.png">
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="bocas">
+                                <img src="assets/images/chica/bocas/boca-chica-1.png">
+                                <img  src="assets/images/chica/bocas/boca-chica-2.png">
+                                <img src="assets/images/chica/bocas/boca-chica-3.png">
+                                <img  src="assets/images/chica/bocas/boca-chica-4.png">
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="pelos">
+                                <img src="assets/images/chica/pelos/pelo-chica-1.png">
+                                <img  src="assets/images/chica/pelos/pelo-chica-2.png">
+                                <img src="assets/images/chica/pelos/pelo-chica-3.png">
+                                <img  src="assets/images/chica/pelos/pelo-chica-4.png">
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 <div class="col-xs-8 ">
@@ -262,10 +270,10 @@
                             <img  class="avatar" src="assets/images/chica/bocas/boca-chica-3.png">
                         </div>
                         <div class="col-xs-12 container-de-generos">
-                            <button class="btn btn-lg genero genero--masculino">
+                            <button class="btn btn-sm genero genero--masculino">
                                 <i class="fa fa-mars"></i>
                             </button>
-                            <button class="btn btn-lg genero genero--femenino">
+                            <button class="btn btn-md genero genero--femenino">
                                 <i class="fa fa-venus"></i>
                             </button>
 
@@ -278,21 +286,31 @@
             <span><i class="fa icono fa-github"></i> Puedes descargar el código en <a class="link" href="http://www.github.com/RSginer">http://www.github.com/RSginer</a> | Diseño de avatares by <a class="link" href="http://opengameart.org/content/avatar-generator-with-15-trillion-combinations">Noblemaster</a></span>
         </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script>
             $(document).ready(function () {
                 $('#start-button').on('click', function () {
                     __init();
+                    $('#tabs a').click(function (e) {
+                        e.preventDefault();
+                        $(this).tab('show');
+                    });
                 });
 
                 __init = function () {
                     $('#start-button').parent().remove();
                     $('.container-de-avatar , .container-de-piezas').removeClass('hidden');
-                }
+                };
+
             });
         </script>
-
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
     </body>
 </html>
