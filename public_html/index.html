@@ -58,7 +58,7 @@
                 max-width: 800px;
                 animation: show-container-avatar 2s;
                 box-shadow: 2px 4px 25px black;
-                padding:1% 30%;
+                padding:1% 20%;
                 background: white;
                 perspective: 3d;
 
@@ -91,7 +91,7 @@
             }
 
             .container-de-generos{
-                margin-top: 20px;
+                margin-top: 15px;
             }
             .genero{
                 font-size: 55px;
@@ -201,7 +201,14 @@
             .nav-tabs li:hover > a{
                 color: #222 !important;
             }
-
+            
+            .piel{
+                padding:30px;
+                margin:5px;
+            }
+            #nombre{
+                text-transform: capitalize;
+            }
             @media (min-width: 1920px){
                 .start-title{
                     left: 20%;                    
@@ -263,13 +270,23 @@
 
                     <div class="row panel container-de-avatar hidden">
                         <div class="col-xs-12">
-                            <span>Avatar</span>
+                            <span id="nombre">Avatar</span>
                         </div>
-                        <div class="col-xs-12 container-de-avatar__caja">
+                        <div class="col-xs-10 container-de-avatar__caja">
                             <img class="avatar" src="assets/images/chica/pelos/pelo-chica-1.png">
-                            <img  class="avatar avatar__cabeza" src="assets/images/chica/cabezas/cabeza-chica-3.png">
+                            <img  class="avatar avatar__cabeza" src="assets/images/chica/cabezas/cabeza-chica-2.png">
                             <img  class="avatar" src="assets/images/chica/ojos/ojos-chica-4.png">
                             <img  class="avatar" src="assets/images/chica/bocas/boca-chica-3.png">
+                        </div>
+                        <div class="col-xs-1">
+                            <br>
+                            <button class="btn btn-lg piel" style="background: #ebe2d5"></button>
+                            <br>
+                            <button class="btn btn-lg piel" style="background: #f0c69b"></button>
+                            <br>
+                            <button class="btn btn-lg piel" style="background: #ddb6a1"></button>
+                            <br>
+                            <button class="btn btn-lg piel" style="background: #81573c"></button>
                         </div>
                         <div class="col-xs-12 container-de-generos">
                             <button class="btn btn-sm genero genero--masculino">
@@ -292,6 +309,7 @@
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script>
+            var nombre;
             $(document).ready(function () {
                 $('#start-button').on('click', function () {
                     __init();
@@ -302,7 +320,9 @@
                 });
 
                 __init = function () {
+                    nombre = prompt("Introduce tu nombre: ");
                     $('#start-button').parent().remove();
+                    $('#nombre').html(nombre);
                     $('.container-de-avatar , .container-de-piezas').removeClass('hidden');
                 };
 
