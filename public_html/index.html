@@ -206,8 +206,16 @@
                 padding:30px;
                 margin:5px;
             }
+            .piel--active{
+                border: 4px solid deepskyblue;
+            }
             #nombre{
                 text-transform: capitalize;
+            }
+            
+            .genero--femenino--active{
+                background-color: deeppink;
+                cursor: default;
             }
             @media (min-width: 1920px){
                 .start-title{
@@ -286,13 +294,13 @@
                             <br>
                             <button class="btn btn-lg piel" style="background: #ddb6a1"></button>
                             <br>
-                            <button class="btn btn-lg piel" style="background: #81573c"></button>
+                            <button class="btn btn-lg piel piel--active" style="background: #81573c"></button>
                         </div>
                         <div class="col-xs-12 container-de-generos">
                             <button class="btn btn-sm genero genero--masculino">
                                 <i class="fa fa-mars"></i>
                             </button>
-                            <button class="btn btn-md genero genero--femenino">
+                            <button class="btn btn-md genero genero--femenino genero--femenino--active">
                                 <i class="fa fa-venus"></i>
                             </button>
 
