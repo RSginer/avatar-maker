@@ -6,9 +6,15 @@ $(document).ready(function () {
     app.bootstrap();
 
     $('#start-button').on('click', function () {
+        $('#modal').modal('show');
+        
+    });
+    
+    $('#boton-jugar').on('click', function(){
+        playerName = $('#input-nombre').val();
+        $('#modal').modal('hide');
         app.__init();
     });
-
 
 
 });
@@ -28,12 +34,15 @@ bootstrap = function () {
 
     tabs();
 
+
     function tabs() {
         $('#tabs a').click(function (e) {
             e.preventDefault();
             $(this).tab('show');
         });
     }
+    
+ 
 };
 
 

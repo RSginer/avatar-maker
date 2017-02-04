@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" draggable="true" ondragover="allowDrop(event)">
+<html lang="es">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -80,6 +80,26 @@
         <div class="creditos">
             <span><i class="fa icono fa-github"></i> Puedes descargar el código en <a class="link" href="http://www.github.com/RSginer">http://www.github.com/RSginer</a> | Dibujos by <a class="link" href="http://opengameart.org/content/avatar-generator-with-15-trillion-combinations">Noblemaster</a></span>
         </div>
+        <div id="modal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Introduce tu nombre</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user-circle"></i></span>
+                            <input type="text" id="input-nombre" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        <button type="button" id="boton-jugar" class="btn btn-primary">Siguiente <i class="fa fa-arrow-circle-o-right"></i></button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
         <script src="assets/vendor/jquery-3.1.1.min.js" type="text/javascript"></script>
         <script src="assets/vendor/bootstrap-3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="assets/js/init.js" type="text/javascript"></script>
