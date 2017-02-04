@@ -21,6 +21,17 @@ $avatar-box-bg: skyblue;
 // CREDITOS
 $creditos-bg-color:rgba(0,0,0,0.5);
 
+// PIELES
+$piel-bg-color-suntan-1:#ebe2d5;
+$piel-bg-color-suntan-2:#f0c69b;
+$piel-bg-color-suntan-3:#ddb6a1;
+$piel-bg-color-suntan-4:#81573c;
+
+$piel-bg-suntan-colors: ($piel-bg-color-suntan-1,
+                         $piel-bg-color-suntan-2,
+                         $piel-bg-color-suntan-3,
+                         $piel-bg-color-suntan-4);
+
 // TABS
 $tab-bg-color:grey;
 $tab-color:white;

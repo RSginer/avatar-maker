@@ -3,6 +3,14 @@
     margin:5px;
     border: 4px solid transparent;
 }
+
+@for $i from 1 through length($piel-bg-suntan-colors){
+    .#{piel__suntan}-#{$i}{
+        background: nth($piel-bg-suntan-colors, $i);
+    }
+}
+
+
 .piel--active{
     border: 4px solid $primary-color;
 }

@@ -204,6 +204,18 @@ body {
   margin: 5px;
   border: 4px solid transparent; }
 
+.piel__suntan-1 {
+  background: #ebe2d5; }
+
+.piel__suntan-2 {
+  background: #f0c69b; }
+
+.piel__suntan-3 {
+  background: #ddb6a1; }
+
+.piel__suntan-4 {
+  background: #81573c; }
+
 .piel--active {
   border: 4px solid #00bfff; }
 
