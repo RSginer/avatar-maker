@@ -57,6 +57,10 @@
                 perspective: 3d;
                 height: 600px;
             }
+            
+            .hidden{
+                display:none;
+            }
 
             .container-de-avatar__caja{
                 box-shadow: 0px 0px 2px whitesmoke;
@@ -119,18 +123,70 @@
             .link{
                 color:aquamarine;
             }
+            
+            .link:hover{
+                text-decoration: none;
+            }
+            
+            .start-title{
+                font-size: 80px;
+                color:white;
+                position: fixed;
+                top:60%;
+                 text-align: center;
+            }
+            
+            .start-credits{
+                font-size: 40px;
+                color:grey;
+                text-align: center;
+                text-transform: uppercase;
+                margin-left: -50px;
+                font-weight: bold;
+            }
+            
+            #start-button{
+                font-size: 50px;
+                padding:20px 100px;
+                top:25%;
+                left:35%;
+                position:fixed;
+            }
+            
+            @media (min-width: 1920px){
+                .start-title{
+                margin-left: -50px;
+                text-align: center;
+            }
+            
+            .start-credits{
+                margin-left: -300px;
+            }
+            
+            #start-button{
+      
+                top:30%;
+                left:35%;
+               
+            }
+            }
         </style>
 
     </head>
     <body>
         <div class="container">
             <div class="row">
-                <div style="" class="col-xs-4 panel container-de-piezas">
+                <div class="col-xs-12">
+                    <h2 class="start-title">¡Empieza a diseñar tu avatar!</h2>
+                    <h2 class="start-credits">Avatar maker by <a href="http://www.github.com/RSginer" class="link"><i class="fa fa-github"></i> RSginer</a></h2>
+                    <button  id="start-button"  class="btn btn-lg btn-info">Comenzar</button>
+                </div>
+                <div style="" class="col-xs-4 panel container-de-piezas hidden">
                     <div class="col-xs-12 container-de-piezas__caja">
                     </div>
                 </div>
                 <div class="col-xs-8 ">
-                    <div class="row panel container-de-avatar">
+                    <div class="row panel container-de-avatar hidden">
                         <div class="col-xs-12 container-de-avatar__caja">
                             <img class="avatar" src="assets/images/chica/pelos/pelo-chica-4.png">
                             <img  class="avatar avatar__cabeza" src="assets/images/chica/cabezas/cabeza-chica-1.png">
@@ -151,11 +207,24 @@
             </div>
         </div>
         <div class="creditos">
-            <span><i class="fa fa-github"></i> Puedes descargar el código en <a class="link" href="http://www.github.com/RSginer">http://www.github.com/RSginer</a> | Diseños de avatares by <a class="link" href="http://opengameart.org/content/avatar-generator-with-15-trillion-combinations">Noblemaster</a></span>
+            <span><i class="fa fa-github"></i> Puedes descargar el código en <a class="link" href="http://www.github.com/RSginer">http://www.github.com/RSginer</a> | Diseño gráfico by <a class="link" href="http://opengameart.org/content/avatar-generator-with-15-trillion-combinations">Noblemaster</a></span>
         </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('#start-button').on('click', function(){
+                    __init();
+                });
+                
+                __init = function(){
+                    $('#start-button').parent().remove();
+                    $('.container-de-avatar , .container-de-piezas').removeClass('hidden');
+                }
+            });
+        </script>
+            
     </body>
 </html>
