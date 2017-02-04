@@ -43,7 +43,6 @@
 
             .container-de-piezas__caja{
                 height: 240px;
-                background: url('http://assets.burdastyle.com/patterns/technical_drawings/000/000/041/BS-001_Pete_TShirt_tech_dwg_large.jpg?1242760182') no-repeat;
             }
 
 
@@ -119,7 +118,7 @@
                 position: fixed;
                 bottom: 0px;
                 padding: 20px;
-                font-size: 20px;
+                font-size: 16px;
                 background: rgba(0,0,0,0.5);
                 width: 100%;
                 color:white;
@@ -156,12 +155,35 @@
             #start-button{
                 font-size: 50px;
                 padding:20px 100px;
-                top:25%;
+                top:30%;
                 box-shadow: -5px 10px 50px black;
                 font-weight: bold;
                 text-transform: uppercase;
                 left:35%;
                 position:fixed;
+            }
+
+            .fa.icono{
+                font-size: 3em;
+            }
+
+            .link:hover{
+                color:deeppink;
+            }
+            .nav-tabs{
+                margin-top: -42px;
+            }
+            
+            .nav-tabs li{
+                background: grey;
+            }
+            
+            .nav-tabs li a{
+                color: white;
+            }
+            
+            .nav-tabs li:hover > a{
+                color: #222;
             }
 
             @media (min-width: 1920px){
@@ -178,13 +200,7 @@
                     top:30%;
                     left:35%;
                 }
-                .fa.icono{
-                    font-size: 3em;
-                }
-                
-                .link:hover{
-                    color:deeppink;
-                }
+
             }
         </style>
 
@@ -198,7 +214,13 @@
                     <button  id="start-button"  class="btn btn-lg btn-info">Comenzar</button>
                 </div>
                 <div style="" class="col-xs-4 panel container-de-piezas hidden">
+                    <ul class="nav nav-tabs">
+                        <li role="presentation" class="active"><a href="#">Ojos</a></li>
+                        <li role="presentation"><a href="#">Bocas</a></li>
+                        <li role="presentation"><a href="#">Pelos</a></li>
+                    </ul>
                     <div class="col-xs-12 container-de-piezas__caja">
+
                     </div>
                 </div>
                 <div class="col-xs-8 ">
