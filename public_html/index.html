@@ -45,9 +45,17 @@
                 height: 598px;
                 overflow-y: scroll;
                 overflow-x: hidden;
+
+
             }
-
-
+            /* custom scroll bar*/
+            ::-webkit-scrollbar{width: 10px;}
+            ::-webkit-scrollbar-thumb{background-color:deepskyblue; border-radius: 0;}
+            ::-webkit-scrollbar-button{background-color: rgba(0,0,0,0.5);}
+             ::-webkit-scrollbar-button:hover{background-color: black;}
+            ::-webkit-scrollbar-thumb:hover{background-color:skyblue;}
+            ::-webkit-scrollbar-track{background-color:rgb(237, 237, 237);}
+            /* fin scroll bar */
             @-webkit-keyframes show-container-avatar {
                 0%   { right: -2000px;transform: rotate(190deg); }
                 100% { right: 0px; }
@@ -71,7 +79,7 @@
 
             .container-de-avatar__caja{
                 box-shadow: 0px 0px 2px whitesmoke;
-                border: 5px solid deepskyblue;
+                border: 5px solid skyblue;
                 border-bottom-width: 0px !important;
                 background: skyblue;
                 width: 350px;
@@ -116,7 +124,7 @@
             .genero--masculino{
                 background-color: #7cb0fd;
             }
-            
+
             .genero--masculino:hover{
                 background-color: #0268ff;
                 color:white;
@@ -188,19 +196,19 @@
             .nav-tabs{
                 margin-top: -42px;
             }
-            
+
             .nav-tabs li{
                 background: grey;
             }
-            
+
             .nav-tabs li a{
                 color: white;
             }
-            
+
             .nav-tabs li:hover > a{
                 color: #222 !important;
             }
-            
+
             @media (min-width: 1920px){
                 .start-title{
                     left: 25%;                    
@@ -242,11 +250,11 @@
                     </div>
                 </div>
                 <div class="col-xs-8 ">
-              
+
                     <div class="row panel container-de-avatar hidden">
-                              <div class="col-xs-12">
-                        <span>Avatar</span>
-                    </div>
+                        <div class="col-xs-12">
+                            <span>Avatar</span>
+                        </div>
                         <div class="col-xs-12 container-de-avatar__caja">
                             <img class="avatar" src="assets/images/chica/pelos/pelo-chica-1.png">
                             <img  class="avatar avatar__cabeza" src="assets/images/chica/cabezas/cabeza-chica-3.png">
