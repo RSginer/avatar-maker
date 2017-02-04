@@ -11,6 +11,7 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -19,17 +20,20 @@
         <![endif]-->
         <style>
             body{
-                font-family: Helvetica, Arial, serif;
+                font-family:  'Press Start 2P', Helvetica, Arial, serif;
                 background: url('assets/images/background.png') #222222;
             }
             .container{
                 margin-top: 5%;
             }
-               @-webkit-keyframes show-container-piezas {
-                0%   { left: -2000px;transform: rotate(360deg); }
+            @-webkit-keyframes show-container-piezas {
+                0%   { left: -2000px;transform: rotate(190deg); }
+                50%{ }
                 100% { left: 0px; }
             }
             .container-de-piezas{
+                perspective: 1000px;
+                transform-style: preserve-3d;
                 box-shadow: -5px 10px 50px black;
                 margin-right: 25px;
                 animation: show-container-piezas 2s;
@@ -44,10 +48,11 @@
 
 
             @-webkit-keyframes show-container-avatar {
-                0%   { right: -2000px;transform: rotate(360deg); }
+                0%   { right: -2000px;transform: rotate(190deg); }
                 100% { right: 0px; }
             }
             .container-de-avatar{
+                perspective: 1000px;
                 position:absolute;
                 max-width: 800px;
                 animation: show-container-avatar 2s;
@@ -55,9 +60,10 @@
                 padding:15% 30%;
                 background: white;
                 perspective: 3d;
+
                 height: 600px;
             }
-            
+
             .hidden{
                 display:none;
             }
@@ -118,57 +124,63 @@
                 width: 100%;
                 color:white;
                 text-align: center;
-                
+
             }
             .link{
                 color:aquamarine;
             }
-            
+
             .link:hover{
                 text-decoration: none;
             }
-            
+
             .start-title{
-                font-size: 80px;
+                font-size: 40px;
                 color:white;
                 position: fixed;
-                top:60%;
-                 text-align: center;
+                top:50%;
+                left: 21%;
+                text-align: center;
+
             }
-            
+
             .start-credits{
-                font-size: 40px;
+                font-size: 30px;
                 color:grey;
                 text-align: center;
                 text-transform: uppercase;
-                margin-left: -50px;
+                margin-right: -100px;
                 font-weight: bold;
             }
-            
+
             #start-button{
                 font-size: 50px;
                 padding:20px 100px;
                 top:25%;
+                box-shadow: -5px 10px 50px black;
+                font-weight: bold;
+                text-transform: uppercase;
                 left:35%;
                 position:fixed;
             }
-            
+
             @media (min-width: 1920px){
                 .start-title{
-                margin-left: -50px;
-                text-align: center;
-            }
-            
-            .start-credits{
-                margin-left: -300px;
-            }
-            
-            #start-button{
-      
-                top:30%;
-                left:35%;
-               
-            }
+                    left: 25%;                    
+                }
+
+                .start-credits{
+                    margin-left: -100px;
+                    margin-right: 0px;
+                }
+
+                #start-button{
+                    top:30%;
+                    left:35%;
+                }
+                .fa{
+                    font-size: 3em;
+                }
             }
         </style>
 
@@ -188,10 +200,10 @@
                 <div class="col-xs-8 ">
                     <div class="row panel container-de-avatar hidden">
                         <div class="col-xs-12 container-de-avatar__caja">
-                            <img class="avatar" src="assets/images/chica/pelos/pelo-chica-4.png">
-                            <img  class="avatar avatar__cabeza" src="assets/images/chica/cabezas/cabeza-chica-1.png">
-                            <img  class="avatar" src="assets/images/chica/ojos/ojos-chica-1.png">
-                            <img  class="avatar" src="assets/images/chica/bocas/boca-chica-2.png">
+                            <img class="avatar" src="assets/images/chica/pelos/pelo-chica-1.png">
+                            <img  class="avatar avatar__cabeza" src="assets/images/chica/cabezas/cabeza-chica-3.png">
+                            <img  class="avatar" src="assets/images/chica/ojos/ojos-chica-4.png">
+                            <img  class="avatar" src="assets/images/chica/bocas/boca-chica-3.png">
                         </div>
                         <div class="col-xs-12 container-de-generos">
                             <button class="btn btn-lg genero genero--masculino">
@@ -214,17 +226,17 @@
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
         <script>
-            $(document).ready(function(){
-                $('#start-button').on('click', function(){
+            $(document).ready(function () {
+                $('#start-button').on('click', function () {
                     __init();
                 });
-                
-                __init = function(){
+
+                __init = function () {
                     $('#start-button').parent().remove();
                     $('.container-de-avatar , .container-de-piezas').removeClass('hidden');
                 }
             });
         </script>
-            
+
     </body>
 </html>
