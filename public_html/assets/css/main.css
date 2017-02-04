@@ -5,7 +5,8 @@
 body {
   font-family: "Press Start 2P", Helvetica, Arial, serif;
   background-image: url("../images/background.png");
-  background-color: #222; }
+  background-color: #222;
+  overflow-y: hidden; }
 
 .container {
   margin-top: 5%; }
@@ -110,6 +111,12 @@ body {
   100% {
     right: 0px; } }
 
+@-webkit-keyframes showAvatar {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 .container-de-avatar {
   perspective: 1000px;
   position: absolute;
@@ -135,7 +142,8 @@ body {
   position: absolute;
   z-index: 1;
   bottom: 0px;
-  margin-left: -20px; }
+  margin-left: -20px;
+  animation: showAvatar 2s; }
 
 .avatar__cabeza {
   z-index: 0; }

@@ -2,7 +2,7 @@ var playerName = "Avatar";
 var app = this;
 
 $(document).ready(function () {
-    
+
     app.bootstrap();
 
     $('#start-button').on('click', function () {
@@ -35,3 +35,5 @@ bootstrap = function () {
         });
     }
 };
+
+

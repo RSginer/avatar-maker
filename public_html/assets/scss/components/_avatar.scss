@@ -5,6 +5,13 @@
     100% { right: 0px; }
 }
 
+@-webkit-keyframes showAvatar {
+    0%   {
+        opacity:0;
+    }
+    100% { opacity:1; }
+}
+
 .container-de-avatar{
     perspective: 1000px;
     position:absolute;
@@ -32,7 +39,11 @@
     z-index: 1;
     bottom:0px;
     margin-left: -20px;
+    animation: showAvatar 2s;
 }
+
+
+
 .avatar__cabeza{
     z-index: 0;
 }
