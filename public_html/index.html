@@ -52,6 +52,8 @@
                 0%   { right: -2000px;transform: rotate(190deg); }
                 100% { right: 0px; }
             }
+
+
             .container-de-avatar{
                 perspective: 1000px;
                 position:absolute;
@@ -166,7 +168,7 @@
                 margin-left:-50px;
                 font-weight: bold;
             }
-            
+
 
             #start-button{
                 font-size: 50px;
@@ -201,7 +203,7 @@
             .nav-tabs li:hover > a{
                 color: #222 !important;
             }
-            
+
             .piel{
                 padding:30px;
                 margin:5px;
@@ -212,11 +214,24 @@
             #nombre{
                 text-transform: capitalize;
             }
-            
+
             .genero--femenino--active{
                 background-color: deeppink;
                 cursor: default;
             }
+
+            @-webkit-keyframes hideStartWindow{
+                0%{opacity: 1;}
+                100%{opacity:0;}
+            }
+
+            .hideStartWindow{
+
+                animation: hideStartWindow 2.4s;
+            }
+
+
+
             @media (min-width: 1920px){
                 .start-title{
                     left: 20%;                    
@@ -239,7 +254,7 @@
     <body>
         <div class="container">
             <div class="row">
-                <div class="col-xs-12">
+                <div class="col-xs-12 start-window">
                     <h2 class="start-title">¡Empieza a diseñar tu avatar!</h2>
                     <h2 class="start-credits">Avatar maker by <a href="http://www.github.com/RSginer" class="link"><i class="fa icono fa-github"></i> RSginer</a></h2>
                     <button  id="start-button"  class="btn btn-lg btn-info">Comenzar</button>
@@ -258,13 +273,13 @@
                                 <img src="assets/images/chica/ojos/ojos-chica-3.png">
                                 <img  src="assets/images/chica/ojos/ojos-chica-4.png">
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="bocas">
+                            <div role="tabpanel" class="tab-pane fade" id="bocas">
                                 <img src="assets/images/chica/bocas/boca-chica-1.png">
                                 <img  src="assets/images/chica/bocas/boca-chica-2.png">
                                 <img src="assets/images/chica/bocas/boca-chica-3.png">
                                 <img  src="assets/images/chica/bocas/boca-chica-4.png">
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="pelos">
+                            <div role="tabpanel" class="tab-pane fade" id="pelos">
                                 <img src="assets/images/chica/pelos/pelo-chica-1.png">
                                 <img  src="assets/images/chica/pelos/pelo-chica-2.png">
                                 <img src="assets/images/chica/pelos/pelo-chica-3.png">
@@ -319,19 +334,23 @@
         <script>
             var nombre;
             $(document).ready(function () {
+                $('#tabs a').click(function (e) {
+                    e.preventDefault();
+                    $(this).tab('show');
+                });
+
                 $('#start-button').on('click', function () {
                     __init();
-                    $('#tabs a').click(function (e) {
-                        e.preventDefault();
-                        $(this).tab('show');
-                    });
                 });
 
                 __init = function () {
-                    nombre = prompt("Introduce tu nombre: ");
-                    $('#start-button').parent().remove();
-                    $('#nombre').html(nombre);
-                    $('.container-de-avatar , .container-de-piezas').removeClass('hidden');
+                    $('.start-window, .start-credits, .start-title').addClass('hideStartWindow');
+                    setTimeout(function () {
+                           $('.start-window, .start-credits, .start-title').remove();
+                           $('#nombre').html(nombre);
+                           $('.container-de-avatar , .container-de-piezas').removeClass('hidden');
+                    }, 2000);
+
                 };
 
             });
