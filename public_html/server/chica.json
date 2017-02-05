@@ -19,6 +19,21 @@
             "id": "ojos-chica-4",
             "src": "assets/images/chica/ojos/ojos-chica-4.png",
             "tipo": "ojos"
+        },
+         {
+            "id": "ojos-chica-5",
+            "src": "assets/images/chica/ojos/ojos-chica-5.png",
+            "tipo": "ojos"
+        },
+         {
+            "id": "ojos-chica-6",
+            "src": "assets/images/chica/ojos/ojos-chica-6.png",
+            "tipo": "ojos"
+        },
+         {
+            "id": "ojos-chica-7",
+            "src": "assets/images/chica/ojos/ojos-chica-7.png",
+            "tipo": "ojos"
         }
     ],
     "pelos": [
@@ -41,7 +56,38 @@
             "id": "pelo-chica-4",
             "src": "assets/images/chica/pelos/pelo-chica-4.png",
             "tipo": "pelos"
-        }          
+        },
+        {
+            "id": "pelo-chica-5",
+            "src": "assets/images/chica/pelos/pelo-chica-5.png",
+            "tipo": "pelos"
+        },
+        {
+            "id": "pelo-chica-6",
+            "src": "assets/images/chica/pelos/pelo-chica-6.png",
+            "tipo": "pelos"
+        },
+        {
+            "id": "pelo-chica-7",
+            "src": "assets/images/chica/pelos/pelo-chica-7.png",
+            "tipo": "pelos"
+        },
+        {
+            "id": "pelo-chica-8",
+            "src": "assets/images/chica/pelos/pelo-chica-8.png",
+            "tipo": "pelos"
+        },
+        {
+            "id": "pelo-chica-9",
+            "src": "assets/images/chica/pelos/pelo-chica-9.png",
+            "tipo": "pelos"
+        },
+        {
+            "id": "pelo-chica-10",
+            "src": "assets/images/chica/pelos/pelo-chica-10.png",
+            "tipo": "pelos"
+        }
+
     ],
 
     "bocas": [
@@ -64,6 +110,28 @@
             "id": "boca-chica-4",
             "src": "assets/images/chica/bocas/boca-chica-4.png",
             "tipo": "bocas"
-        }        
+        },
+        {
+            "id": "boca-chica-5",
+            "src": "assets/images/chica/bocas/boca-chica-5.png",
+            "tipo": "bocas"
+        },
+        {
+            "id": "boca-chica-6",
+            "src": "assets/images/chica/bocas/boca-chica-6.png",
+            "tipo": "bocas"
+        }  
+        ,
+        {
+            "id": "boca-chica-7",
+            "src": "assets/images/chica/bocas/boca-chica-7.png",
+            "tipo": "bocas"
+        },
+        {
+            "id": "boca-chica-8",
+            "src": "assets/images/chica/bocas/boca-chica-8.png",
+            "tipo": "bocas"
+        }  
+
     ]
 }
