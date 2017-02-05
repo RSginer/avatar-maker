@@ -13,39 +13,18 @@ function drop(ev) {
         var img = document.createElement('img');
         $(img).prop('tipo', data.tipo);
         img.src = data.src;
+        img.setAttribute('id', data.id);
         $(img).addClass('avatar');
         $(ev.target.parentNode).prepend(img);
-    }else{
-       console.log($('img[tipo=' + data.tipo + ']').attr('src'));
-    }
+    } else {
+        $('#' + app.estado.avatar[data.tipo].object.id).remove();
+        var img = document.createElement('img');
+        $(img).prop('tipo', data.tipo);
+        img.src = data.src;
+        img.setAttribute('id', data.id);
+        $(img).addClass('avatar');
+        $(ev.target.parentNode).prepend(img);
 
-    switch (data.tipo) {
-        case 'ojos':
-        {
-            app.estado.avatar.ojos = {
-                object: data,
-                puesta: true
-            }
-            break
-        }
-        case 'pelos':
-        {
-            app.estado.avatar.pelos = {
-                object: data,
-                puesta: true
-            }
-            break;
-        }
-        case 'bocas':
-        {
-            app.estado.avatar.bocas = {
-                object: data,
-                puesta: true
-            }
-            break;
-        }
-        default:
-            break;
     }
-
+    app.estado.avatar[data.tipo] = {object: data, puesta: true};
 }
