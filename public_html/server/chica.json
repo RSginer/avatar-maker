@@ -1,0 +1,69 @@
+{
+    "ojos": [
+        {
+            "id": "ojos-chica-1",
+            "src": "assets/images/chica/ojos/ojos-chica-1.png",
+            "tipo": "ojos"
+        },
+        {
+            "id": "ojos-chica-2",
+            "src": "assets/images/chica/ojos/ojos-chica-2.png",
+            "tipo": "ojos"
+        },
+        {
+            "id": "ojos-chica-3",
+            "src": "assets/images/chica/ojos/ojos-chica-3.png",
+            "tipo": "ojos"
+        },
+        {
+            "id": "ojos-chica-4",
+            "src": "assets/images/chica/ojos/ojos-chica-4.png",
+            "tipo": "ojos"
+        }
+    ],
+    "pelos": [
+        {
+            "id": "pelo-chica-1",
+            "src": "assets/images/chica/pelos/pelo-chica-1.png",
+            "tipo": "pelo"
+        },
+        {
+            "id": "pelo-chica-2",
+            "src": "assets/images/chica/pelos/pelo-chica-2.png",
+            "tipo": "pelo"
+        },
+        {
+            "id": "pelo-chica-3",
+            "src": "assets/images/chica/pelos/pelo-chica-3.png",
+            "tipo": "pelo"
+        },
+        {
+            "id": "pelo-chica-4",
+            "src": "assets/images/chica/pelos/pelo-chica-4.png",
+            "tipo": "pelo"
+        }          
+    ],
+
+    "bocas": [
+        {
+            "id": "boca-chica-1",
+            "src": "assets/images/chica/bocas/boca-chica-1.png",
+            "tipo": "boca"
+        },
+        {
+            "id": "boca-chica-2",
+            "src": "assets/images/chica/bocas/boca-chica-2.png",
+            "tipo": "boca"
+        },
+        {
+            "id": "boca-chica-3",
+            "src": "assets/images/chica/bocas/boca-chica-3.png",
+            "tipo": "boca"
+        },
+        {
+            "id": "boca-chica-4",
+            "src": "assets/images/chica/bocas/boca-chica-4.png",
+            "tipo": "boca"
+        }        
+    ]
+}

@@ -138,6 +138,9 @@ body {
   height: 350px;
   border-radius: 8px; }
 
+img[src=""] {
+  display: none; }
+
 .avatar {
   position: absolute;
   z-index: 1;

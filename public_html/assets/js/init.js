@@ -4,7 +4,7 @@ var genero = "chica";
 $(document).ready(function () {
 
     app.bootstrap();
-
+   
     $('#start-button').on('click', function () {
         $('#modal').modal('show');
 
@@ -27,6 +27,8 @@ $(document).ready(function () {
 });
 
 __init = function () {
+    app.genero = $('input[name=genero]:checked').val();
+    app.cargarPîezas(app.genero);
     $('.start-window, .start-credits, .start-title').addClass('hideStartWindow');
     // Esperar que se ejecute la animación
     setTimeout(function () {
@@ -47,8 +49,19 @@ bootstrap = function () {
             $(this).tab('show');
         });
     }
+};
 
 
+cargarPîezas =  function(genero){
+    var piezasApi = new PiezasApi(genero);
+    
+    piezasApi.find().done(function(data){
+        var bocas = data["bocas"];
+        var ojos = data["ojos"];
+        var pelos = data["pelos"];
+        
+        console.log(bocas);
+    })
 };
 
 
