@@ -81,23 +81,56 @@ factoryCabezaInicial = function (genero) {
 pintarCabezaIncial = function () {
     var cabeza = app.factoryCabezaInicial(app.genero);
     $('.container-de-avatar__caja').append(cabeza);
-    app.estado.avatar.cabeza.puesta = true;
-    app.estado.avatar.cabeza.object = {
-        id: "cabeza-" + genero + "-1",
-        src: cabeza.src,
-        tipo: "cabeza"
+    var nuevaCabezaState = {
+        puesta: true,
+        object: {
+            id: "cabeza-" + genero + "-1",
+            src: cabeza.src,
+            tipo: "cabeza"
+        }
     };
-    app.estado.avatar.cabeza.element = cabeza;
+   app.estado.avatar.cabeza = nuevaCabezaState;
 };
 
 
 pintarPiezas = function () {
+    app.pintarOjos();
+    app.pintarBocas();
+    app.pintarPelos();
+};
+
+pintarOjos = function () {
     for (var i = 0; i < app.piezas["ojos"].length; i++) {
         ojo = app.piezas.ojos[i];
         var imgOjo = document.createElement('img');
         $(imgOjo).prop('draggable', true);
         $(imgOjo).addClass('pieza');
+        $(imgOjo).prop('src', ojo.src);
         $(imgOjo).on('dragstart', drag);
         $('#ojos').append(imgOjo);
     }
+}
+
+pintarBocas = function () {
+    for (var i = 0; i < app.piezas["bocas"].length; i++) {
+        boca = app.piezas.bocas[i];
+        var imgOjo = document.createElement('img');
+        $(imgOjo).prop('draggable', true);
+        $(imgOjo).addClass('pieza');
+        $(imgOjo).prop('src', boca.src);
+        $(imgOjo).on('dragstart', drag);
+        $('#bocas').append(imgOjo);
+    }
 };
+
+pintarPelos = function () {
+    for (var i = 0; i < app.piezas["pelos"].length; i++) {
+        pelo = app.piezas.pelos[i];
+        var imgOjo = document.createElement('img');
+        $(imgOjo).prop('draggable', true);
+        $(imgOjo).addClass('pieza');
+        $(imgOjo).prop('src', pelo.src);
+        $(imgOjo).on('dragstart', drag);
+        $('#pelos').append(imgOjo);
+    }
+}

@@ -1,6 +1,6 @@
 
 Object.observe(app.estado, function (changes) {
-    console.log(" %c ¡ESTADO GENERAL ACTUALIZADO! ", 'font-weight: bold; color: black; font-size: 1.5em');
+    console.log(" %c ¡ESTADO GENERAL ACTUALIZADO! ", 'font-weight: bold; color: white; font-size: 1.5em;background-color:black;');
     for (var i = 0; i < changes.length; i++) {
         console.log("%c PROPIEDAD => " + changes[i].name, 'color: #0085d2');
         console.log("%c ANTIGUO VALOR => " + JSON.stringify(changes[i].oldValue), 'color: grey');
