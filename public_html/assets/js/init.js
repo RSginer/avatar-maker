@@ -104,10 +104,11 @@ pintarOjos = function () {
         ojo = app.piezas.ojos[i];
         var imgOjo = document.createElement('img');
         $(imgOjo).prop('draggable', true);
+        $(imgOjo).prop('id', ojo.id);
         $(imgOjo).addClass('pieza');
-        $(imgOjo).data("object", ojo);
+        $(imgOjo).data("object", JSON.stringify(ojo));
         $(imgOjo).prop('src', ojo.src);
-        $(imgOjo).prop('ondragstart', 'drag($event)');
+        imgOjo.addEventListener('dragstart', drag, false);
         $('#ojos').append(imgOjo);
     }
 }
@@ -117,11 +118,11 @@ pintarBocas = function () {
         boca = app.piezas.bocas[i];
         var imgBoca = document.createElement('img');
         $(imgBoca).prop('draggable', true);
+        $(imgBoca).prop('id', boca.id);
         $(imgBoca).addClass('pieza');
-        $(imgBoca).data("object", boca);
+        $(imgBoca).data("object", JSON.stringify(boca));
         $(imgBoca).prop('src', boca.src);
-        $(imgBoca).prop('ondragstart', 'drag($event)');
-
+        imgBoca.addEventListener('dragstart', drag, false);
         $('#bocas').append(imgBoca);
     }
 };
@@ -132,9 +133,10 @@ pintarPelos = function () {
         var imgPelo = document.createElement('img');
         $(imgPelo).prop('draggable', true);
         $(imgPelo).addClass('pieza');
-        $(imgPelo).data("object", pelo);
+        $(imgPelo).prop('id', pelo.id);
+        $(imgPelo).data("object", JSON.stringify(pelo));
         $(imgPelo).prop('src', pelo.src);
-        $(imgPelo).prop('ondragstart', 'drag($event)');
+        imgPelo.addEventListener('dragstart', drag, false);
         $('#pelos').append(imgPelo);
     }
 }

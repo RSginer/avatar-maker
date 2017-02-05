@@ -7,7 +7,7 @@ AppState = function () {
                     puesta: false,
                     object: null
                 },
-                boca: {
+                bocas: {
                     puesta: false,
                     object: null
                 },
@@ -15,7 +15,7 @@ AppState = function () {
                     puesta: false,
                     object: null
                 },
-                pelo: {
+                pelos: {
                     puesta: false,
                     object: null
                 }
