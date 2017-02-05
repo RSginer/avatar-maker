@@ -236,3 +236,13 @@ body {
 
 .nav-tabs li a {
   color: white; }
+
+.btn-info {
+  background-image: url("../images/boton.png");
+  background-size: 100% 99%;
+  background-repeat: no-repeat; }
+  .btn-info:hover {
+    color: white;
+    background-image: url("../images/boton-apretado.png");
+    background-size: 100% 99%;
+    background-repeat: no-repeat; }

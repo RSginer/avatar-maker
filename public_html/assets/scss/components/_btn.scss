@@ -1,0 +1,12 @@
+.btn-info{
+    background-image:  url('../images/boton.png');
+    background-size:100% 99%;
+    background-repeat: no-repeat;
+    &:hover{
+        color: white;
+        background-image:  url('../images/boton-apretado.png');
+        background-size:100% 99%;
+        background-repeat: no-repeat;
+
+    }
+}
