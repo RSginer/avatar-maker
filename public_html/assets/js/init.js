@@ -9,16 +9,6 @@ var piezas = {
     pelos: []
 };
 
-Object.observe(app.estado, function (changes) {
-    console.log(" %c ¡ESTADO ACTUALIZADO! ", 'font-weight: bold; color: black; font-size: 1.5em');
-    for (var i = 0; i < changes.length; i++) {
-        console.log("%c PROPIEDAD => " + changes[i].name, 'color: #0085d2');
-        console.log("%c ANTIGUO VALOR => " + changes[i].oldValue, 'color: grey');
-        console.log("%c NUEVO VALOR => " + changes[i].object[changes[0].name], 'color: darkgreen');
-    }
-    //  console.log("%c AppState:" + JSON.stringify(changes[changes.length -1].object, undefined, 3), 'color: grey');
-});
-
 $(document).ready(function () {
     app.bootstrap();
 
