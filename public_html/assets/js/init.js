@@ -39,6 +39,7 @@ __init = function () {
     app.estado.genero = app.genero;
     app.pintarCabezaIncial();
     app.cargarPiezas(app.genero);
+
     $('.start-window, .start-credits, .start-title').addClass('hideStartWindow');
     // Esperar que se ejecute la animación
     setTimeout(function () {
@@ -64,6 +65,8 @@ cargarPiezas = function (genero) {
     piezasApi.find().done(function (data) {
         app.piezas = data;
         app.estado.piezas = data;
+        app.pintarPiezas();
+
     });
 };
 
@@ -85,4 +88,16 @@ pintarCabezaIncial = function () {
         tipo: "cabeza"
     };
     app.estado.avatar.cabeza.element = cabeza;
+};
+
+
+pintarPiezas = function () {
+    for (var i = 0; i < app.piezas["ojos"].length; i++) {
+        ojo = app.piezas.ojos[i];
+        var imgOjo = document.createElement('img');
+        $(imgOjo).prop('draggable', true);
+        $(imgOjo).addClass('pieza');
+        $(imgOjo).on('dragstart', drag);
+        $('#ojos').append(imgOjo);
+    }
 };
