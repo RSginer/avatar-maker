@@ -1,10 +1,15 @@
-var playerName = "Avatar";
+var playerName = "Rubén";
 var app = this;
 var genero = "chica";
+var piezas = {
+    bocas: [],
+    ojos: [],
+    pelos: []
+};
 $(document).ready(function () {
 
     app.bootstrap();
-   
+
     $('#start-button').on('click', function () {
         $('#modal').modal('show');
 
@@ -28,6 +33,7 @@ $(document).ready(function () {
 
 __init = function () {
     app.genero = $('input[name=genero]:checked').val();
+    app.pintarCabezaIncial();
     app.cargarPîezas(app.genero);
     $('.start-window, .start-credits, .start-title').addClass('hideStartWindow');
     // Esperar que se ejecute la animación
@@ -40,9 +46,7 @@ __init = function () {
 };
 
 bootstrap = function () {
-
     tabs();
-
     function tabs() {
         $('#tabs a').click(function (e) {
             e.preventDefault();
@@ -51,17 +55,24 @@ bootstrap = function () {
     }
 };
 
-
-cargarPîezas =  function(genero){
+cargarPîezas = function (genero) {
     var piezasApi = new PiezasApi(genero);
-    
-    piezasApi.find().done(function(data){
-        var bocas = data["bocas"];
-        var ojos = data["ojos"];
-        var pelos = data["pelos"];
-        
-        console.log(bocas);
-    })
+    piezasApi.find().done(function (data) {
+        app.piezas = data;
+    });
+};
+
+factoryCabezaInicial = function (genero) {
+    var cabezaInicialImg = document.createElement('img');
+    $(cabezaInicialImg).prop('src', "assets/images/" + genero + "/cabezas/cabeza-" + genero + "-1.png");
+    $(cabezaInicialImg).addClass('avatar');
+    $(cabezaInicialImg).addClass('avatar__cabeza');
+    return cabezaInicialImg;
+};
+
+pintarCabezaIncial = function(){
+    var cabeza = app.factoryCabezaInicial(app.genero);
+    $('.container-de-avatar__caja').append(cabeza);
 };
 
 
