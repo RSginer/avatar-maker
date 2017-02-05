@@ -1,13 +1,25 @@
-var playerName = "Rubén";
+var playerName;
 var app = this;
-var genero = "chica";
+var numCambios = 0;
+var genero;
+var estado = new AppState();
 var piezas = {
     bocas: [],
     ojos: [],
     pelos: []
 };
-$(document).ready(function () {
 
+Object.observe(app.estado, function (changes) {
+    console.log(" %c ¡ESTADO ACTUALIZADO! ", 'font-weight: bold; color: black; font-size: 1.5em');
+    for (var i = 0; i < changes.length; i++) {
+        console.log("%c PROPIEDAD => " + changes[i].name, 'color: #0085d2');
+        console.log("%c ANTIGUO VALOR => " + changes[i].oldValue, 'color: grey');
+        console.log("%c NUEVO VALOR => " + changes[i].object[changes[0].name], 'color: darkgreen');
+    }
+    //  console.log("%c AppState:" + JSON.stringify(changes[changes.length -1].object, undefined, 3), 'color: grey');
+});
+
+$(document).ready(function () {
     app.bootstrap();
 
     $('#start-button').on('click', function () {
@@ -16,7 +28,8 @@ $(document).ready(function () {
     });
 
     $('#boton-jugar').on('click', function () {
-        playerName = $('#input-nombre').val();
+        app.playerName = $('#input-nombre').val();
+        app.estado.playerName = app.playerName;
         $('#modal').modal('hide');
         app.__init();
     });
@@ -33,8 +46,9 @@ $(document).ready(function () {
 
 __init = function () {
     app.genero = $('input[name=genero]:checked').val();
+    app.estado.genero = app.genero;
     app.pintarCabezaIncial();
-    app.cargarPîezas(app.genero);
+    app.cargarPiezas(app.genero);
     $('.start-window, .start-credits, .start-title').addClass('hideStartWindow');
     // Esperar que se ejecute la animación
     setTimeout(function () {
@@ -55,10 +69,11 @@ bootstrap = function () {
     }
 };
 
-cargarPîezas = function (genero) {
+cargarPiezas = function (genero) {
     var piezasApi = new PiezasApi(genero);
     piezasApi.find().done(function (data) {
         app.piezas = data;
+        app.estado.piezas = data;
     });
 };
 
@@ -70,9 +85,14 @@ factoryCabezaInicial = function (genero) {
     return cabezaInicialImg;
 };
 
-pintarCabezaIncial = function(){
+pintarCabezaIncial = function () {
     var cabeza = app.factoryCabezaInicial(app.genero);
     $('.container-de-avatar__caja').append(cabeza);
+    app.estado.avatar.cabeza.puesta = true;
+    app.estado.avatar.cabeza.object = {
+        id: "cabeza-" + genero + "-1",
+        src: cabeza.src,
+        tipo: "cabeza"
+    };
+    app.estado.avatar.cabeza.element = cabeza;
 };
-
-
