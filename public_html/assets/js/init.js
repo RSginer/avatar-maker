@@ -89,7 +89,7 @@ pintarCabezaIncial = function () {
             tipo: "cabeza"
         }
     };
-   app.estado.avatar.cabeza = nuevaCabezaState;
+    app.estado.avatar.cabeza = nuevaCabezaState;
 };
 
 
@@ -105,8 +105,9 @@ pintarOjos = function () {
         var imgOjo = document.createElement('img');
         $(imgOjo).prop('draggable', true);
         $(imgOjo).addClass('pieza');
+        $(imgOjo).data("object", ojo);
         $(imgOjo).prop('src', ojo.src);
-        $(imgOjo).on('dragstart', drag);
+        $(imgOjo).prop('ondragstart', 'drag($event)');
         $('#ojos').append(imgOjo);
     }
 }
@@ -114,23 +115,26 @@ pintarOjos = function () {
 pintarBocas = function () {
     for (var i = 0; i < app.piezas["bocas"].length; i++) {
         boca = app.piezas.bocas[i];
-        var imgOjo = document.createElement('img');
-        $(imgOjo).prop('draggable', true);
-        $(imgOjo).addClass('pieza');
-        $(imgOjo).prop('src', boca.src);
-        $(imgOjo).on('dragstart', drag);
-        $('#bocas').append(imgOjo);
+        var imgBoca = document.createElement('img');
+        $(imgBoca).prop('draggable', true);
+        $(imgBoca).addClass('pieza');
+        $(imgBoca).data("object", boca);
+        $(imgBoca).prop('src', boca.src);
+        $(imgBoca).prop('ondragstart', 'drag($event)');
+
+        $('#bocas').append(imgBoca);
     }
 };
 
 pintarPelos = function () {
     for (var i = 0; i < app.piezas["pelos"].length; i++) {
         pelo = app.piezas.pelos[i];
-        var imgOjo = document.createElement('img');
-        $(imgOjo).prop('draggable', true);
-        $(imgOjo).addClass('pieza');
-        $(imgOjo).prop('src', pelo.src);
-        $(imgOjo).on('dragstart', drag);
-        $('#pelos').append(imgOjo);
+        var imgPelo = document.createElement('img');
+        $(imgPelo).prop('draggable', true);
+        $(imgPelo).addClass('pieza');
+        $(imgPelo).data("object", pelo);
+        $(imgPelo).prop('src', pelo.src);
+        $(imgPelo).prop('ondragstart', 'drag($event)');
+        $('#pelos').append(imgPelo);
     }
 }
