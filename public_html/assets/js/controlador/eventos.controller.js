@@ -1,4 +1,4 @@
-var app = app;
+var app = app; // HACK
 // CONTROLES DE INICIO DEL JUEGO
 var botonDeComenzar = $('#start-button');
 var botonSiguienteDelModal = $('#boton-jugar');
