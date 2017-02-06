@@ -9,15 +9,16 @@ __init = function () {
     app.estado.genero = $('input[name=genero]:checked').val();
     app.pintarCabezaIncial();
     app.cargarPiezas(app.estado.genero);
+    app.jugar();
+};
 
+jugar = function () {
     $('.start-window, .start-credits, .start-title').addClass('hideStartWindow');
-    // Esperar que se ejecute la animación
     setTimeout(function () {
         $('.start-window, .start-credits, .start-title').remove();
         $('#nombre').html(app.estado.playerName);
         $('.container-de-avatar , .container-de-piezas').removeClass('hidden');
     }, 2000);
-
 };
 
 bootstrap = function () {
