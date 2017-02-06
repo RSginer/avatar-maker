@@ -30,8 +30,10 @@ dropAvatar = function (ev) {
     ev.preventDefault();
     var data = JSON.parse(ev.dataTransfer.getData("object"));
     if (app.estado.avatar[data.tipo].puesta === true) {
-        document.getElementById(app.estado.avatar[data.tipo].object.id).setAttribute('id', data.id);
-        document.getElementById(data.id).setAttribute('src', data.src);
+        var idImagenPuesta = app.estado.avatar[data.tipo].object.id;
+        var imagenPuesta = document.getElementById(idImagenPuesta);
+        imagenPuesta.setAttribute('id', data.id);
+        imagenPuesta.setAttribute('src', data.src);
     } else {
         var imagen = factoryImagen(data);
         $(ev.target.parentNode).prepend(imagen);
