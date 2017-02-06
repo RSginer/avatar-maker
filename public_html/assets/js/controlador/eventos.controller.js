@@ -44,9 +44,15 @@ factoryImagen = function (data) {
 };
 
 cambiarPiel = function () {
+    
+    var self = this;
+    
+    var getNumeroDePielSeleccionadaByClassName = function () {
+        return self.className.split("piel__suntan-")[1].split(" ")[0];
+    };
+
     var cabezaDelAvatar = $('.avatar__cabeza');
-    // Recoje el numero de piel a partir de su clase
-    var pielSeleccionada = this.className.split("piel__suntan-")[1].split(" ")[0];
+    var pielSeleccionada = getNumeroDePielSeleccionadaByClassName();
     var botonDePielSeleccionada = getBotonPielByNumeroPiel(pielSeleccionada);
     botonesDeSeleccionDePiel.removeClass('piel--active');
     botonDePielSeleccionada.addClass('piel--active');
@@ -54,6 +60,8 @@ cambiarPiel = function () {
     var nuevaCabeza = new Pieza(true, "cabeza-" + app.estado.genero + "-" + pielSeleccionada, newSrcCabeza, "cabeza");
     app.estado.avatar.cabeza = nuevaCabeza;
     cabezaDelAvatar.prop('src', nuevaCabeza.object.src);
+
+
 };
 
 getSrcImagenCabezaByNumeroPiel = function (numeroPiel) {
@@ -62,7 +70,8 @@ getSrcImagenCabezaByNumeroPiel = function (numeroPiel) {
     var pathDeImagenes = srcCabezaEnAvatar.split("cabeza-" + app.estado.genero + "-")[0];
     var archivoImagenCabeza = "cabeza-" + app.estado.genero + "-" + numeroPiel + ".png";
     var newSrcCabeza = pathDeImagenes + archivoImagenCabeza;
-    return newSrcCabeza;}
+    return newSrcCabeza;
+}
 
 getBotonPielByNumeroPiel = function (numeroPiel) {
     return $('.piel__suntan-' + numeroPiel);
