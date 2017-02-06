@@ -1,20 +1,16 @@
-validarFormularioInicial = function () {
-    var valor = $(this).val();
-    if (valor.length > 0) {
-        $('#boton-jugar').removeAttr('disabled');
-    } else {
-        $('#boton-jugar').prop("disabled", true);
-    }
-}
+var botonesDeSeleccionDePiel = $('.piel');
+var botonDeComenzar = $('#start-button');
+var botonSiguienteDelModal = $('#boton-jugar');
+var modal = $('#modal');
 
 iniciarJuego = function () {
     app.estado.playerName = $('#input-nombre').val();
-    $('#modal').modal('hide');
+    modal.modal('hide');
     app.__init();
 }
 
 abrirModalDeInicio = function () {
-    $('#modal').modal('show');
+    modal.modal('show');
 };
 
 allowDrop = function (ev) {
@@ -45,21 +41,34 @@ factoryImagen = function (data) {
     imagen.setAttribute('id', data.id);
     $(imagen).addClass('avatar');
     return imagen;
-}
+};
 
 cambiarPiel = function () {
+    var cabezaDelAvatar = $('.avatar__cabeza');
+    // Recoje el numero de piel a partir de su clase
     var pielSeleccionada = this.className.split("piel__suntan-")[1].split(" ")[0];
-    $('.piel').removeClass('piel--active');
-    $('.piel__suntan-' + pielSeleccionada).addClass('piel--active');
-    var cabezaEnAvatar = $('.avatar__cabeza').attr('src');
-    var srcCabeza = cabezaEnAvatar.split("cabeza-" + app.estado.genero + "-")[0] + "cabeza-" + app.estado.genero + "-" + pielSeleccionada + ".png";
-    var nuevaCabeza = new Pieza(true, "cabeza-" + app.estado.genero + "-" + pielSeleccionada, srcCabeza, "cabeza");
+    var botonDePielSeleccionada = getBotonPielByNumeroPiel(pielSeleccionada);
+    botonesDeSeleccionDePiel.removeClass('piel--active');
+    botonDePielSeleccionada.addClass('piel--active');
+    var newSrcCabeza = getSrcCabezaByNumeroPiel(pielSeleccionada);
+    var nuevaCabeza = new Pieza(true, "cabeza-" + app.estado.genero + "-" + pielSeleccionada, newSrcCabeza, "cabeza");
     app.estado.avatar.cabeza = nuevaCabeza;
-    $('.avatar__cabeza').prop('src', srcCabeza);
-}
+    cabezaDelAvatar.prop('src', nuevaCabeza.object.src);
+};
 
+getSrcCabezaByNumeroPiel = function (numeroPiel) {
+    var cabezaDelAvatar = $('.avatar__cabeza');
+    var srcCabezaEnAvatar = cabezaDelAvatar.attr('src');
+    var pathDeImagenes = srcCabezaEnAvatar.split("cabeza-" + app.estado.genero + "-")[0];
+    var archivoImagenCabeza = "cabeza-" + app.estado.genero + "-" + numeroPiel + ".png";
+    var newSrcCabeza = pathDeImagenes + archivoImagenCabeza;
+    return newSrcCabeza;}
 
-$('.piel').on('click', cambiarPiel);
-$('#start-button').on('click', abrirModalDeInicio);
-$('#boton-jugar').on('click', iniciarJuego);
-$('#input-nombre').on('change', validarFormularioInicial);
+getBotonPielByNumeroPiel = function (numeroPiel) {
+    return $('.piel__suntan-' + numeroPiel);
+};
+
+botonesDeSeleccionDePiel.on('click', cambiarPiel);
+botonDeComenzar.on('click', abrirModalDeInicio);
+botonSiguienteDelModal.on('click', iniciarJuego);
+

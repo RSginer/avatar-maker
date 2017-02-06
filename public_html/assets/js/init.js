@@ -6,7 +6,7 @@ $(document).ready(function () {
 });
 
 __init = function () {
-    app.estado.genero =  $('input[name=genero]:checked').val();
+    app.estado.genero = $('input[name=genero]:checked').val();
     app.pintarCabezaIncial();
     app.cargarPiezas(app.estado.genero);
 

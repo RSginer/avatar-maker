@@ -1,6 +1,6 @@
 AppState = function () {
     this.genero = "";
-    this.playerName = "";
+    this.playerName = "Avatar";
     this.piezas = [],
     this.avatar = {
             cabeza: {
