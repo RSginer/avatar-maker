@@ -1,12 +1,12 @@
-function allowDrop(ev) {
+allowDrop = function(ev) {
     ev.preventDefault();
 }
 
-drag = function (ev) {
+dragPieza = function(ev) {
     ev.dataTransfer.setData("object", $(this).data("object"));
 };
 
-function drop(ev) {
+dropAvatar = function(ev) {
     ev.preventDefault();
     var data = JSON.parse(ev.dataTransfer.getData("object"));
     if (app.estado.avatar[data.tipo].puesta === true) {
@@ -16,11 +16,10 @@ function drop(ev) {
         var imagen = factoryImagen(data);
         $(ev.target.parentNode).prepend(imagen);
     }
-
     app.estado.avatar[data.tipo] = {object: data, puesta: true};
 }
 
-function factoryImagen(data) {
+factoryImagen= function(data) {
     var imagen = document.createElement('img');
     $(imagen).prop('tipo', data.tipo);
     imagen.src = data.src;

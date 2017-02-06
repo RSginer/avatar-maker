@@ -5,16 +5,9 @@ $('.piel').on('click', function () {
     $('.piel').removeClass('piel--active');
     $('.piel__suntan-' + pielSeleccionada).addClass('piel--active');
     var cabezaEnAvatar = $('.avatar__cabeza').attr('src');
-    var srcCabeza = cabezaEnAvatar.split("cabeza-" + app.genero + "-")[0] + "cabeza-" + app.genero + "-" + pielSeleccionada + ".png";
-    var nuevaCabezaState = {
-        puesta: true,
-        object: {
-            id: "cabeza-" + genero + "-" + pielSeleccionada,
-            src: srcCabeza,
-            tipo: "cabeza"
-        }
-    };
-    app.estado.avatar.cabeza = nuevaCabezaState;
+    var srcCabeza = cabezaEnAvatar.split("cabeza-" + app.estado.genero + "-")[0] + "cabeza-" + app.estado.genero + "-" + pielSeleccionada + ".png";
+    var nuevaCabeza = new Pieza(true, "cabeza-" + app.estado.genero + "-" + pielSeleccionada, srcCabeza, "cabeza");
+    app.estado.avatar.cabeza = nuevaCabeza;
     $('.avatar__cabeza').prop('src', srcCabeza);
 });
 

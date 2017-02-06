@@ -2,20 +2,20 @@ AppState = function () {
     this.genero = "";
     this.playerName = "";
     this.piezas = [],
-            this.avatar = {
-                cabeza: {
+    this.avatar = {
+            cabeza: {
                     puesta: false,
                     object: null
                 },
-                bocas: {
+            bocas: {
                     puesta: false,
                     object: null
                 },
-                ojos: {
+            ojos: {
                     puesta: false,
                     object: null
                 },
-                pelos: {
+            pelos: {
                     puesta: false,
                     object: null
                 }
