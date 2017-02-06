@@ -55,16 +55,16 @@ pintarCabezaIncial = function () {
 
 
 pintarPiezas = function () {
-    Object.keys(app.estado.piezas).forEach(function (key, value, array) {
-        for (var i = 0; i < app.estado.piezas[key].length; i++) {
-            pieza = app.estado.piezas[key][i];
+    Object.keys(app.estado.piezas).forEach(function (tipoPieza) {
+        for (var i = 0; i < app.estado.piezas[tipoPieza].length; i++) {
+            pieza = app.estado.piezas[tipoPieza][i];
             var imagenPieza = document.createElement('img');
             $(imagenPieza).prop('draggable', true);
             $(imagenPieza).addClass('pieza');
             $(imagenPieza).data("object", JSON.stringify(pieza));
             $(imagenPieza).prop('src', pieza.src);
             imagenPieza.addEventListener('dragstart', dragPieza, false);
-            $('#' + key).append(imagenPieza);
+            $('#' + tipoPieza).append(imagenPieza);
         }
     });
 };
