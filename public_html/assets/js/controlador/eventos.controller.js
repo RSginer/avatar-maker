@@ -53,7 +53,7 @@ var botonesDeSeleccionDePiel = $('.piel');
 
 cambiarPiel = function () {
 
-    var self = this;
+    var self = this; // HACK
 
     getNumeroDePielSeleccionadaByClassName = function () {
         return self.className.split("piel__suntan-")[1].split(" ")[0];
