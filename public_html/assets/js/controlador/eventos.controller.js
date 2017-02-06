@@ -1,3 +1,4 @@
+var app = app;
 // CONTROLES DE INICIO DEL JUEGO
 var botonDeComenzar = $('#start-button');
 var botonSiguienteDelModal = $('#boton-jugar');
@@ -7,7 +8,7 @@ iniciarJuego = function () {
     app.estado.playerName = $('#input-nombre').val();
     modal.modal('hide');
     app.__init();
-}
+};
 
 abrirModalDeInicio = function () {
     modal.modal('show');

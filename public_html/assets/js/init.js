@@ -64,7 +64,7 @@ pintarPiezas = function () {
             $(imagenPieza).addClass('pieza');
             $(imagenPieza).data("object", JSON.stringify(pieza));
             $(imagenPieza).prop('src', pieza.src);
-            imagenPieza.addEventListener('dragstart', dragPieza, false);
+            imagenPieza.addEventListener('dragstart', app.dragPieza, false);
             $('#' + tipoPieza).append(imagenPieza);
         }
     });
