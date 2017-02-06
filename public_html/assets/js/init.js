@@ -18,7 +18,7 @@ jugar = function () {
         $('.start-window, .start-credits, .start-title').remove();
         $('#nombre').html(app.estado.playerName);
         $('.container-de-avatar , .container-de-piezas').removeClass('hidden');
-    }, 2000);
+    }, 2000); // Espera 2 segundos para visualizar la animación de inicio
 };
 
 bootstrap = function () {
