@@ -82,9 +82,6 @@ cambiarPiel = function () {
     cabezaDelAvatar.prop('src', nuevaCabeza.object.src);
 };
 
-
-
-
 botonesDeSeleccionDePiel.on('click', cambiarPiel);
 botonDeComenzar.on('click', abrirModalDeInicio);
 botonSiguienteDelModal.on('click', iniciarJuego);
