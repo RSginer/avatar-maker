@@ -54,7 +54,6 @@ pintarCabezaIncial = function () {
     app.estado.avatar.cabeza = nuevaCabeza;
 };
 
-
 pintarPiezas = function () {
     Object.keys(app.estado.piezas).forEach(function (tipoPieza) {
         for (var i = 0; i < app.estado.piezas[tipoPieza].length; i++) {

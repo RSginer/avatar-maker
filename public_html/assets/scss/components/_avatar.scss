@@ -35,7 +35,7 @@
     border-radius: 8px;
 }
 img[src=""] {
-   display: none;
+    display: none;
 }
 .avatar{
     position: absolute;
@@ -53,4 +53,25 @@ img[src=""] {
 
 #nombre{
     text-transform: capitalize;
+}
+
+
+@media (max-width: 1199px){
+    .container-de-avatar{
+        padding:1% 20%;
+        margin-left: 0px;
+        position: absolute;
+        margin-top: 250px;
+    }
+}
+
+@media (max-width: 640px){
+    .container-de-avatar{
+        padding:1% 5%;
+    }
+    
+}
+
+@media (max-width: 720px){
+    margin-left: -30px !important;
 }

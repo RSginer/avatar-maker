@@ -22,3 +22,38 @@
 .pieza{
     margin-left: -25px;
 }
+
+@media (max-width: 1199px){
+    .container-de-piezas{
+        box-shadow: -5px 10px 50px black;
+        margin: 0 auto;
+        height: 200px;
+        position: absolute;
+    }
+
+    .pieza{
+        float: left;
+        width: 200px;
+        margin-top:20px;
+    }
+
+    .container-de-piezas__caja{
+        height: 200px;
+    }
+}
+@media (max-width:900px){
+    .container-de-piezas{
+        margin-top: 30px;
+    }
+}
+@media (min-width:900px) and (max-width:990px){
+     .container-de-piezas{
+        width: 80%;
+    }
+}
+
+@media (min-width:756px) and (max-width: 900px){
+     .container-de-piezas{
+        width: 90%;
+    }
+}
