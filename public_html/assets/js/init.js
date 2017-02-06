@@ -3,26 +3,6 @@ var estado = new AppState();
 
 $(document).ready(function () {
     app.bootstrap();
-
-    $('#start-button').on('click', function () {
-        $('#modal').modal('show');
-
-    });
-
-    $('#boton-jugar').on('click', function () {
-        app.estado.playerName = $('#input-nombre').val();
-        $('#modal').modal('hide');
-        app.__init();
-    });
-
-    $('#input-nombre').on('change', function () {
-        var valor = $(this).val();
-        if (valor.length > 0) {
-            $('#boton-jugar').removeAttr('disabled');
-        } else {
-            $('#boton-jugar').prop("disabled", true);
-        }
-    });
 });
 
 __init = function () {
