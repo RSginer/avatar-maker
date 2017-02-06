@@ -1,4 +1,4 @@
-var botonesDeSeleccionDePiel = $('.piel');
+// CONTROLES DE INICIO DEL JUEGO
 var botonDeComenzar = $('#start-button');
 var botonSiguienteDelModal = $('#boton-jugar');
 var modal = $('#modal');
@@ -13,6 +13,10 @@ abrirModalDeInicio = function () {
     modal.modal('show');
 };
 
+botonDeComenzar.on('click', abrirModalDeInicio);
+botonSiguienteDelModal.on('click', iniciarJuego);
+
+// CONTROLES DE DRAG AND DROP
 allowDrop = function (ev) {
     ev.preventDefault();
 };
@@ -42,6 +46,9 @@ factoryImagen = function (data) {
     $(imagen).addClass('avatar');
     return imagen;
 };
+
+// CONTROLES DE CAMBIAR PIEL
+var botonesDeSeleccionDePiel = $('.piel');
 
 cambiarPiel = function () {
 
@@ -83,6 +90,5 @@ cambiarPiel = function () {
 };
 
 botonesDeSeleccionDePiel.on('click', cambiarPiel);
-botonDeComenzar.on('click', abrirModalDeInicio);
-botonSiguienteDelModal.on('click', iniciarJuego);
+
 
