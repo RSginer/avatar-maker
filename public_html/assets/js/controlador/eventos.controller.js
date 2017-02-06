@@ -50,13 +50,13 @@ cambiarPiel = function () {
     var botonDePielSeleccionada = getBotonPielByNumeroPiel(pielSeleccionada);
     botonesDeSeleccionDePiel.removeClass('piel--active');
     botonDePielSeleccionada.addClass('piel--active');
-    var newSrcCabeza = getSrcCabezaByNumeroPiel(pielSeleccionada);
+    var newSrcCabeza = getSrcImagenCabezaByNumeroPiel(pielSeleccionada);
     var nuevaCabeza = new Pieza(true, "cabeza-" + app.estado.genero + "-" + pielSeleccionada, newSrcCabeza, "cabeza");
     app.estado.avatar.cabeza = nuevaCabeza;
     cabezaDelAvatar.prop('src', nuevaCabeza.object.src);
 };
 
-getSrcCabezaByNumeroPiel = function (numeroPiel) {
+getSrcImagenCabezaByNumeroPiel = function (numeroPiel) {
     var cabezaDelAvatar = $('.avatar__cabeza');
     var srcCabezaEnAvatar = cabezaDelAvatar.attr('src');
     var pathDeImagenes = srcCabezaEnAvatar.split("cabeza-" + app.estado.genero + "-")[0];
