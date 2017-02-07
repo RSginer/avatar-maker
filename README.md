@@ -1,3 +1,4 @@
+[![GitHub version](https://badge.fury.io/gh/RSginer%2Favatar-maker.svg)](https://badge.fury.io/gh/RSginer%2Favatar-maker)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/RSginer/avatar-maker/blob/master/LICENSE.md)
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/RSginer/avatar-maker/blob/master/LICENSE.md)
 
