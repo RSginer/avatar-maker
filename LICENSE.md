@@ -20,4 +20,15 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-This license is only for the software, the character designs has a CC-BY License and the author is Noblemaster : http://opengameart.org/users/noblemaster
+This license is only for the software, the avatar graphics has a CC-BY License and the author is Noble Master Games : http://noblemaster.com
+
+LICENSE FOR AVATAR GRAPHICS: 
+
+All files enclosed are licensed under CC-BY-3.0. You are free to use the graphics/source both commercially and non-commercially as long as the following credits are included:
+
+1. Credit Noble Master Games as follows (linking is optional):
+   "Avatar graphics created by Noble Master Games" and link to 
+   http://www.noblemaster.com 
+2. Credit the artist "Liea" as follows (optional):
+   "Avatar graphics designed by Mei-Li Nieuwland" and link to 
+   http://liea.deviantart.com
