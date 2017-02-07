@@ -20,7 +20,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-# The MIT license is only for the software, the avatar graphics has a CC-BY License and the author is Noble Master Games : http://noblemaster.com
+## The MIT license is only for the software, the avatar graphics has a CC-BY License and the author is Noble Master Games : http://noblemaster.com
 
 # LICENSE FOR AVATAR GRAPHICS
 
