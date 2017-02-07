@@ -12,4 +12,4 @@
 
 <img src= "https://raw.githubusercontent.com/RSginer/avatar-maker/master/public_html/sreenshot.PNG">
 
-Character designs by <a href="http://opengameart.org/users/noblemaster">Noblemaster</a>
+Avatar graphics created by Noble Master Games   http://www.noblemaster.com 
