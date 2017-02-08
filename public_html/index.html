@@ -42,7 +42,7 @@
                                 <!-- AQUI EL NOMBRE DEL JUGADOR -->
                             </span>
                         </div>
-                        <div class="col-xs-10 container-de-avatar__caja"  ondrop="dropAvatar(event)" ondragover="allowDrop(event)">
+                        <div class="col-xs-10 container-de-avatar__caja" id="imagen-avatar"  ondrop="dropAvatar(event)" ondragover="allowDrop(event)">
                             <!-- AQUI LAS PIEZAS DEL AVATAR -->
                         </div>
                         <div class="col-xs-1">
@@ -55,14 +55,18 @@
                             <br>
                             <button class="btn btn-lg piel piel__suntan-4"></button>
                         </div>
+                        <div class="col-xs-12">
+                            <br>
+                            <button class="btn btn-info" id="boton-guardar">Guardar</button>
+                        </div>
                         <!--<div class="col-xs-12 container-de-generos">
-                       <!-- <button id="selector-masculino" class="btn btn-sm genero genero--masculino">
-                                <i class="fa fa-mars"></i>
-                            </button>
-                            <button id="selector-femenino" class="btn btn-md genero genero--femenino genero--femenino--active">
-                                <i class="fa fa-venus"></i>
-                            </button>
-                        </div>-->
+                        <!-- <button id="selector-masculino" class="btn btn-sm genero genero--masculino">
+                                 <i class="fa fa-mars"></i>
+                             </button>
+                             <button id="selector-femenino" class="btn btn-md genero genero--femenino genero--femenino--active">
+                                 <i class="fa fa-venus"></i>
+                             </button>
+                         </div>-->
                     </div>
                 </div>
             </div>
@@ -112,7 +116,11 @@
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
+        </div>
+        <div style="position:fixed; top:10px;" id="img-out">
+
+        </div>
+        <!-- /.modal -->
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -122,11 +130,17 @@
         <script src="assets/vendor/jquery-3.1.1.min.js" type="text/javascript"></script>
         <script src="assets/vendor/object-observe.min.js" type="text/javascript"></script>
         <script src="assets/vendor/bootstrap-3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="assets/vendor/html2canvas.js" type="text/javascript"></script>
+        <script src="assets/vendor/canvas2image.js" type="text/javascript"></script>
         <script src="assets/js/modelo/AppState.js" type="text/javascript"></script>
         <script src="assets/js/modelo/Pieza.js" type="text/javascript"></script>
         <script src="assets/js/servicio/PiezasApi.service.js" type="text/javascript"></script>
         <script src="assets/js/controlador/eventos.controller.js" type="text/javascript"></script>
+        <script src="assets/js/modelo/AvatarMaker.js"></script>
         <script src="assets/js/init.js" type="text/javascript"></script>
-       <script src="assets/js/log.js" type="text/javascript"></script>
+        <script src="assets/js/log.js" type="text/javascript"></script>
+
+
+
     </body>
 </html>
